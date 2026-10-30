@@ -1,4 +1,6 @@
 10/30/26
+A pico2 uf2 file is found at
+https://github.com/develone/hsdaoh-rp2350/blob/test-dev/apps-uf2-files/counter/counter.uf2
 
 To build hsdaoh-rp2350:  After creating a fork of the repo and the test-dev branch.
 devel@pi5-80:~/hsdaoh-rp2350/build $ git clone -b test-dev https://github.com/develone/hsdaoh-rp2350.git
