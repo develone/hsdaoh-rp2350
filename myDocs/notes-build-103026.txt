@@ -1,0 +1,38 @@
+10/30/26
+
+To build hsdaoh-rp2350:  After creating a fork of the repo and the test-dev branch.
+devel@pi5-80:~/hsdaoh-rp2350/build $ git clone -b test-dev https://github.com/develone/hsdaoh-rp2350.git
+
+devel@pi5-80:~/hsdaoh-rp2350/build $ mkdir hsdaoh-rp2350/build
+
+devel@pi5-80:~/hsdaoh-rp2350/build $ cd hsdaoh-rp2350/build
+ 
+devel@pi5-80:~/hsdaoh-rp2350/build $ cmake -DPICO_PLATFORM=rp2350 -DPICO_BOARD=pico2 ../
+
+devel@pi5-80:~/hsdaoh-rp2350/build $ make -j 8
+
+devel@pi5-80:~/hsdaoh-rp2350/build $ ls apps/counter/
+CMakeFiles           counter.bin  counter.elf      counter.hex    counter.uf2
+cmake_install.cmake  counter.dis  counter.elf.map  counter.pio.h  Makefile
+
+devel@pi5-80:~/hsdaoh-rp2350/build $ cp apps/counter/counter.uf2 /media/devel/RP2350
+
+I allready had built hsdaoh.  This was more difficult.
+
+devel@pi5-90:~/hsdaoh $ hsdaoh_test
+unsupported descriptor subtype VS_COLORFORMAT
+unsupported descriptor subtype VS_COLORFORMAT
+Reporting PPM error measurement every 10 seconds...
+Press ^C after a few minutes.
+attempt to claim already-claimed interface 1
+Synchronized to HDMI input stream
+real sample rate: 64004096 current PPM: 1133470 cumulative PPM: 1133470
+real sample rate: 63939347 current PPM: 1131312 cumulative PPM: 1132380
+real sample rate: 64064408 current PPM: 1135480 cumulative PPM: 1133419
+^CSignal caught, exiting!
+
+devel@pi5-90:~/hsdaoh $ devel@pi5-90:~/hsdaoh $ hsdaoh_file > counter.txt
+
+https://github.com/develone/hsdaoh-rp2350/blob/test-dev/myDocs/counter.png
+
+https://github.com/develone/hsdaoh-rp2350/blob/test-dev/myDocs/counter-1.png
